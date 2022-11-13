@@ -1,0 +1,7 @@
+{
+    "/v1/tipo-cambio-sunat":{
+        "target":"https://api.apis.net.pe",
+        "segure": false,
+        "changeOrigin":true
+    }
+}

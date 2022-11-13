@@ -1,0 +1,72 @@
+<div class="FormRegistro">
+  <form [formGroup]="personaForm" (ngSubmit)="registrar()">
+    
+    <div class="form-group">
+      <label>Nombre</label>
+      <input type="text" formControlName="nombre" class="form-control">
+    </div>
+    <div class="form-group">
+      <label>Apellido </label>
+      <input type="text" formControlName="apellido" class="form-control">
+    </div>
+    <div class="form-group">
+      <label>DNI</label>
+      <input type="number" formControlName="dni" class="form-control">
+    </div>
+  
+    <div class="form-group">
+      <label>celular</label>
+      <input type="number" formControlName="celular" class="form-control">
+    </div>
+    <div class="form-group">
+      <label>direccion</label>
+      <input type="text" formControlName="direccion" class="form-control">
+    </div>
+    <div class="form-group">
+      <label>rol</label>
+      <input type="text" formControlName="rol" class="form-control">
+    </div>
+
+    
+
+
+    <button type="submit" class="btn btn-primary" [disabled]="personaForm.invalid">
+      Registrar
+    </button>
+    <button class="btn btn-success" (click)="mandarnuevainfo()">
+      Mandar nueva info 
+    </button>
+  </form>
+</div>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Apellido</th>
+      <th scope="col">DNI</th>
+      <th scope="col">celular</th>
+      <th scope="col">direccion</th>
+      <th scope="col">rol</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let listacli of clientes">
+      <th scope="row">{{listacli.id}}</th>
+      <td>{{listacli.nombre}}</td>
+      <td>{{listacli.apellido}}</td>
+      <td>{{listacli.dni}}</td>
+      <td>{{listacli.celular}}</td>
+      <td>{{listacli.direccion}}</td>
+      <td>{{listacli.rol}}</td>
+      <td>
+        <button type="submit" class="btn btn-danger" (click)="eliminar(listacli)">
+          Delete
+        </button>
+        <button type="submit" class="btn btn-success" (click)="editar(listacli)">
+          Editar
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>

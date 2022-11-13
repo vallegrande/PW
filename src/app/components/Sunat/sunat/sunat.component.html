@@ -1,0 +1,20 @@
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">COMPRA</th>
+        <th scope="col">FECHA</th>
+        <th scope="col">MONEDA</th>
+        <th scope="col">ORIGEN</th>
+        <th scope="col">VENTA</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let valores of imfo">
+        <td>{{valores.compra}}</td>
+        <td>{{valores.fecha}}</td>
+        <td>{{valores.moneda}}</td>
+        <td>{{valores.origen}}</td>
+        <td>{{valores.venta}}</td>
+      </tr>
+    </tbody>
+  </table>
